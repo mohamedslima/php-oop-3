@@ -23,9 +23,8 @@ class User
     {
         if ($_product->in_stock) {
             $this->my_shop[] = $_product;
-            return true;
         } else {
-            return false;
+            throw new Exception("Spiacenti, " . $_product->nome . " non disponibile.");
         }
     }
 
@@ -47,7 +46,8 @@ class User
             return number_format((float)$total_price, 2, '.', '');
         }
     }
-    public function validCard() {
+    public function validCard()
+    {
         return !$this->card_expired;
     }
 }

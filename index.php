@@ -6,19 +6,16 @@ require_once __DIR__ . "/animalGame.php";
 
 $dog_food = new animalFood("Migliorcane", "bocconi", 1.50, "Cane");
 $cat_food = new animalFood("Migliorgatto", "bocconi", 2, "Gatti");
+$cat_food->in_stock = false;
 $mouse_game = new animalGame("Giochi Preziosi", "giochi", 10, "plastica");
 
 $user1 = new user("Mohamed", "hammaslima@gmail.com");
 $user1->addShop($dog_food);
 
-var_dump($user1);
-
 $user2 = new user("Ludo", "ludoludo@libero.it");
 $user2->card_expired = true;
 $user2->addShop($cat_food);
 $user2->addShop($mouse_game);
-
-var_dump($user2);
 
 ?>
 
